@@ -1,0 +1,16 @@
+body{
+    min-height: 100vh;
+    background: linear-gradient(#ffffff, #365237);
+    overflow: hidden;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.send-container{
+    margin: auto auto auto auto;
+}
+
+.send-btn{
+
+}

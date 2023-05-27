@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Matrix</title>
+    <title>Country Information Provider</title>
     <meta charset="UTF-8">
     <meta name="author" content="Anton"/>
     <meta name="viewport" content="width=device-width, maximum-scale=3.0, minimum-scale=1.0, initial-scale=1"/>
+    <!--Styles-->
+    <link rel="stylesheet" type="text/css" href="css/index_desktop.css"/>
+    <link rel="stylesheet" type="text/css" media="only screen and (max-width:500px)" href="css/index_mobile.css">
     <!--Icons-->
     <link rel="icon" type="image/png" href="img/beach-flower-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="img/beach-flower-icon.png"/>
     <script src="js/index.js" type="text/javascript"></script>
 </head>
 <body>
+<div class="main-container">
+    <label>
+        <select id="continent-select" name="continent">
+            <option>--Select Continent--</option>
+            <option value="EU">Europe</option>
+            <option value="NA" >North America</option>
+            <option value="SA">South America</option>
+            <option value="AF">Africa</option>
+            <option value="AS">Asia</option>
+            <option value="OC">Oceania</option>
+            <option value="AN">Antarctica</option>
+        </select>
+    </label>
+    <label>
+        <select id="number-select" name="number">
+            <option>--Select Number of Countries to Display--</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </label>
+    <table class="data-table">
+        <tr>
+            <th>Official Name</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Currency</th>
+            <th>Subregion</th>
+            <th>Languages</th>
+        </tr>
+        <tr>
 
+        </tr>
+    </table>
+    <button class="send-btn">Get Information</button>
+</div>
 </body>
 </html>

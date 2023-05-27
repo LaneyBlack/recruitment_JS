@@ -19,7 +19,7 @@
         <select id="continent-select" name="continent">
             <option>--Select Continent--</option>
             <option value="EU">Europe</option>
-            <option value="NA" >North America</option>
+            <option value="NA">North America</option>
             <option value="SA">South America</option>
             <option value="AF">Africa</option>
             <option value="AS">Asia</option>
@@ -36,7 +36,8 @@
             <option value="5">5</option>
         </select>
     </label>
-    <table class="data-table">
+    <table class="countries">
+        <thead>
         <tr>
             <th>Official Name</th>
             <th>Capital</th>
@@ -45,11 +46,12 @@
             <th>Subregion</th>
             <th>Languages</th>
         </tr>
-        <tr>
+        </thead>
+        <tbody id="countries-body">
 
-        </tr>
+        </tbody>
     </table>
-    <button class="send-btn">Get Information</button>
+    <button class="send-btn" onclick="refill_Information()">Get Information</button>
 </div>
 </body>
 </html>

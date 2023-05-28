@@ -15,19 +15,19 @@ Table header and query URL are built using this configuration file.
 
 # Instructions
 
-How to pull the code / clone or fork your project repository?\
+**How to pull the code / clone or fork your project repository?**\
 Just pull the whole project from the GitHub repository.
 
-How to compile / assemble the code?\
+**How to compile / assemble the code?**\
 You don't need to compile this code.
 
-How to run/deploy the solution?\
+**How to run/deploy the solution?**\
 Unfortunately you **CANNOT** just double index.html for this app to work, because it will fail to load the resources.\
 I am personally opening the index.html file through the project using WebStorm. Because he creates a localhost with the chosen html web
 page and loads all the resources. Looks like this:
 ![localhost-url.png](img/localhost-url.png)
 
-How to use it (if any user input required)?\
+**How to use it (if any user input required)?**\
 Use the select in the top left corner of the screen, to choose the continent to take countries from.\
 Use the slider to choose how many random countries you want there to be shown.\
 Use the button in the bottom right corner of the screen to submit get the table of countries with your chosen options.

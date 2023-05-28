@@ -13,7 +13,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/beach-flower-icon.png"/>
     <script src="js/index.js" type="text/javascript"></script>
 </head>
-<body>
+<body onload="setCountriesHeader()">
 <div class="main-container">
     <label>
         <select id="continent-select" name="continent">
@@ -27,8 +27,7 @@
             <option value="antarctica">Antarctica</option>
         </select>
     </label>
-    <label id="number-label">
-        2
+    <label id="number-label">2
         <input type="range" id="number-range" name="volume" min="2" max="10">
         10
     </label>
@@ -37,20 +36,10 @@
         <img alt="loading" src="img/loading.gif" height="15" width="15"/>
     </div>
     <table class="countries">
-        <thead>
-        <tr>
-            <th>Official Name</th>
-            <th>Capital</th>
-            <th>Population</th>
-            <th>Currency</th>
-            <th>Subregion</th>
-            <th>Languages</th>
-        </tr>
-        </thead>
-        <tbody id="countries-body">
-        </tbody>
+        <thead id="countries-header"></thead>
+        <tbody id="countries-body"></tbody>
     </table>
-    <button class="send-btn" onclick="refill_Information()">Get Information</button>
+    <button class="send-btn" onclick="getInformation()">Get Information</button>
 </div>
 </body>
 </html>

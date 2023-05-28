@@ -1,9 +1,11 @@
 # Country Info Provider
 
-Reference said that the application will be ran on many different platforms, so I decided to make it a web app. 
+Reference said that the application will be ran on many different platforms, so I decided to make it a web app.
 
-Sometimes REST API given in the task is **not working**. You can try either my test file **(test.json)(only few EU countries)** or yours.\
-To do this please ...
+Sometimes REST API given in the task is **not working**. You can try either my test file **(test.json)** (only few EU
+countries)or yours.\
+To do this please change a path to your file in tsconfig.json and change the place marked with comments in index.js to
+fetch a local file
 ![restapi-problem-screenshot.png](img/restapi-screenshot.png)
 Because of this I unfortunately couldn't test this URL for different continents.
 

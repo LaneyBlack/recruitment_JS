@@ -1,11 +1,7 @@
-const consoleLog = true;
-
-// const url = 'https://restcountries.com/v3.1/region/europe?fields=name,capital,population,currencies,subregion,languages'
-
-async function refill_Information() {
+async function getInformation() {
     // If selects have values then
     if (document.getElementById("continent-select").value !== 'none') {
-        showLoading();
+        showLoadingMsg();
         // Get Configuration
         const config = await fetchData("./tsconfig.json")
             .catch(error => console.error("Fetch Config Error", error));
@@ -17,25 +13,22 @@ async function refill_Information() {
         for (let i = 0; i < config.tableConfig.fields.length; i++) {
             queryURL += config.tableConfig.fields[i] + ","
         }
-        if (consoleLog)
+        if (config.consoleLog)
             console.log(queryURL);
 
         // Then try to get data using created URL
         try {
             // let data = await fetchData(queryURL);
-            let data = await fetchData("./test.json"); // local file insertion -----------------------------------
-            if (consoleLog)
-                console.log(data);
-            showCountries(data, config.tableConfig);
+            let data = await fetchData(config.testfile); // local file insertion -----------------------------------
+            fulfillCountryTable(data, config.tableConfig, config.consoleLog);
         } catch (e) {
             alert("Countries Rest API service is unavailable!\n" +
                 "Check - https://restcountries.com/");
-            console.log("Error:", e);
+            console.error("Error:", e);
         }
-        hideLoading();
+        hideLoadingMsg();
     } else {
-        //ToDo on screen
-        alert("Please select values!");
+        alert("Please select a continent!");
     }
 }
 
@@ -44,7 +37,7 @@ async function fetchData(filePath) {
     return await response.json();
 }
 
-function showCountries(data, tableConfig) {
+function fulfillCountryTable(data, tableConfig, consoleLog) {
     const columns = tableConfig.fields;
     let countries = [];
     // Get N random countries from the data
@@ -99,15 +92,26 @@ function showCountries(data, tableConfig) {
         }
         created_body += "</tr>";
     }
-    if (consoleLog)
-        console.log(created_body);
     document.getElementById("countries-body").innerHTML = created_body;
 }
 
-function showLoading() {
+function showLoadingMsg() {
     document.getElementById("loading").style.display = "block"
 }
 
-function hideLoading() {
+function hideLoadingMsg() {
     document.getElementById("loading").style.display = "none";
+}
+
+async function setCountriesHeader() {
+    const config = await fetchData("./tsconfig.json")
+        .catch(error => console.error("Fetch Config Error", error));
+    let created_header = "<tr>";
+    for (let i = 0; i < config.tableConfig.headers.length; i++) {
+        created_header += "<th>" + config.tableConfig.headers[i] + "</th>";
+    }
+    created_header += "</tr>";
+    if (config.consoleLog)
+        console.log(created_header);
+    document.getElementById("countries-header").innerHTML = created_header;
 }

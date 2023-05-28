@@ -8,7 +8,17 @@
     "node_modules"
   ],
   "url": "https://restcountries.com/v3.1",
+  "testfile": "./test.json",
+  "consoleLog": true,
   "tableConfig": {
+    "headers": [
+      "Official Name",
+      "Capital",
+      "Population",
+      "Currencies",
+      "Subregion",
+      "Languages"
+    ],
     "fields": [
       "name",
       "capital",

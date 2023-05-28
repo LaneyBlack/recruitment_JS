@@ -1,0 +1,51 @@
+[
+  {
+    "name": {
+      "official": "Andorra"
+    },
+    "capital": "Andorra la Vella",
+    "currencies": ["EUR"],
+    "languages": [
+      {
+        "name": "Catalan"
+      }
+    ]
+  },
+  {
+    "name": {
+      "official": "Albania"
+    },
+    "capital": "Tirana",
+    "currencies": ["ALL"],
+    "languages": [
+      {
+        "name": "Albanian"
+      }
+    ],
+    "subregion": "Balkans"
+  },
+  {
+    "name": {
+      "official": "Austria"
+    },
+    "capital": "Vienna",
+    "currencies": ["EUR"],
+    "languages": [
+      {
+        "name": "German"
+      }
+    ]
+  },
+  {
+    "name": {
+      "official": "Sweden"
+    },
+    "capital": "Mariehamn",
+    "currencies": ["EUR"],
+    "languages": [
+      {
+        "name": "Swedish"
+      }
+    ]
+  }
+]

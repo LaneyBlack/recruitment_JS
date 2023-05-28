@@ -7,5 +7,18 @@
   "exclude": [
     "node_modules"
   ],
-  "query-link":"https://countries.trevorblades.com/graphql"
+  "url": "https://restcountries.com/v3.1",
+  "tableConfig": {
+    "fields": [
+      "name",
+      "capital",
+      "population",
+      "currencies",
+      "subregion",
+      "languages"
+    ],
+    "name": [
+      "official"
+    ]
+  }
 }

@@ -24,16 +24,31 @@ table, th, td {
     margin: 5vh 15vw;
 }
 
+.main-container select {
+    float: left;
+    margin: 15px 15px 15px auto;
+}
+
+.main-container #loading{
+    float: right;
+    margin: 15px auto;
+    width: 100px;
+    height: 20px;
+    display: none;
+}
+
 .countries {
     width: 100%;
     height: 100%;
     background: var(--table-color);
     border-collapse: collapse;
 }
-.countries th{
+
+.countries th {
     height: 30px;
 }
-.countries td{
+
+.countries td {
     padding: 10px;
 }
 
@@ -44,7 +59,3 @@ table, th, td {
     margin: 15px auto;
 }
 
-select{
-    float: left;
-    margin: 15px 15px 15px auto;
-}

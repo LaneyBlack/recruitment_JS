@@ -3,7 +3,6 @@ const consoleLog = true;
 // const url = 'https://restcountries.com/v3.1/region/europe?fields=name,capital,population,currencies,subregion,languages'
 
 async function refill_Information() {
-    // ToDo Please select values
     // If selects have values then
     if (document.getElementById("continent-select").value !== 'none'
         || document.getElementById("number-select").value !== 'none') {
@@ -24,9 +23,8 @@ async function refill_Information() {
 
         // Then try to get data using created URL
         try {
-            //FixMe
             // let data = await fetchData(queryURL);
-            let data = await fetchData("./test.json");
+            let data = await fetchData("./test.json"); // local file insertion -----------------------------------
             if (consoleLog)
                 console.log(data);
             showCountries(data, config.tableConfig);
@@ -108,10 +106,9 @@ function showCountries(data, tableConfig) {
 }
 
 function showLoading() {
-    //loading visibility true
-    //ToDo
+    document.getElementById("loading").style.display = "block"
 }
 
 function hideLoading() {
-    //loading visibility false
+    document.getElementById("loading").style.display = "none";
 }

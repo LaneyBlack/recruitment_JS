@@ -18,8 +18,8 @@ async function getInformation() {
 
         // Then try to get data using created URL
         try {
-            // let data = await fetchData(queryURL);
-            let data = await fetchData(config.testfile); // local file insertion -----------------------------------
+            let data = await fetchData(queryURL);
+            // let data = await fetchData(config.testfile); // local file insertion -----------------------------------
             fulfillCountryTable(data, config.tableConfig, config.consoleLog);
         } catch (e) {
             alert("Countries Rest API service is unavailable!\n" +

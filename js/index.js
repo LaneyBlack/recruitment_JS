@@ -4,8 +4,7 @@ const consoleLog = true;
 
 async function refill_Information() {
     // If selects have values then
-    if (document.getElementById("continent-select").value !== 'none'
-        || document.getElementById("number-select").value !== 'none') {
+    if (document.getElementById("continent-select").value !== 'none') {
         showLoading();
         // Get Configuration
         const config = await fetchData("./tsconfig.json")
@@ -49,7 +48,7 @@ function showCountries(data, tableConfig) {
     const columns = tableConfig.fields;
     let countries = [];
     // Get N random countries from the data
-    for (let i = 0; i < document.getElementById("number-select").value; i++) {
+    for (let i = 0; i < document.getElementById("number-range").value; i++) {
         let index = 0;
         do {
             index = Math.floor(Math.random() * data.length);

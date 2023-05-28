@@ -4,19 +4,24 @@
       "official": "Andorra"
     },
     "capital": "Andorra la Vella",
-    "currencies": ["EUR"],
+    "currencies": [
+      "EUR"
+    ],
     "languages": [
       {
         "name": "Catalan"
       }
-    ]
+    ],
+    "population": 190000
   },
   {
     "name": {
       "official": "Albania"
     },
     "capital": "Tirana",
-    "currencies": ["ALL"],
+    "currencies": [
+      "ALL"
+    ],
     "languages": [
       {
         "name": "Albanian"
@@ -29,7 +34,9 @@
       "official": "Austria"
     },
     "capital": "Vienna",
-    "currencies": ["EUR"],
+    "currencies": [
+      "EUR"
+    ],
     "languages": [
       {
         "name": "German"
@@ -41,10 +48,99 @@
       "official": "Sweden"
     },
     "capital": "Mariehamn",
-    "currencies": ["EUR"],
+    "currencies": [
+      "EUR"
+    ],
     "languages": [
       {
         "name": "Swedish"
+      }
+    ]
+  },
+  {
+    "name": {
+      "official": "France"
+    },
+    "capital": "Paris",
+    "currencies": [
+      "EUR"
+    ],
+    "languages": [
+      {
+        "name": "French"
+      }
+    ]
+  },
+  {
+    "name": {
+      "official": "Poland"
+    },
+    "capital": "Warsaw",
+    "currencies": [
+      "PLN"
+    ],
+    "languages": [
+      {
+        "name": "Polish"
+      }
+    ]
+  },
+  {
+    "name": {
+      "official": "Belarus"
+    },
+    "capital": "Minsk",
+    "currencies": [
+      "BLR"
+    ],
+    "languages": [
+      {
+        "name": "Russian"
+      },
+      {
+        "name": "Belorussian"
+      }
+    ]
+  },
+  {
+    "name": {
+      "official": "Germany"
+    },
+    "capital": "Berlin",
+    "currencies": [
+      "EUR"
+    ],
+    "languages": [
+      {
+        "name": "German"
+      }
+    ]
+  },
+  {
+    "name": {
+      "official": "Spain"
+    },
+    "capital": "Madrid",
+    "currencies": [
+      "EUR"
+    ],
+    "languages": [
+      {
+        "name": "Spanish"
+      }
+    ]
+  },
+  {
+    "name": {
+      "official": "Portugal"
+    },
+    "capital": "Lisbon",
+    "currencies": [
+      "EUR"
+    ],
+    "languages": [
+      {
+        "name": "Portuguese"
       }
     ]
   }

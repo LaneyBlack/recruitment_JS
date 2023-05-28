@@ -1,13 +1,16 @@
 :root {
     --color1: #ffffff;
-    --color2: #365237;
+    --color2: #4272a6;
     --color3: #000000;
+    --color4: #195fa6;
     --table-color: rgba(255, 255, 255, 0.5);
 }
 
 body {
     min-height: 100vh;
     background: linear-gradient(var(--color1), var(--color2));
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 15px ;
     overflow: hidden;
     text-align: center;
     padding: 0;
@@ -15,7 +18,7 @@ body {
 }
 
 table, th, td {
-    border: 1px solid var(--color3);
+    border: 1px solid var(--color2);
 }
 
 .main-container {
@@ -27,6 +30,19 @@ table, th, td {
 .main-container select {
     float: left;
     margin: 15px 15px 15px auto;
+    cursor: pointer;
+    color:var(--color1);
+    background:var(--color4);
+}
+
+.main-container #number-label{
+    float: left;
+    margin: 15px 15px 15px auto;
+}
+
+.main-container #number-range{
+    width: 80px;
+    color:var(--color4);
 }
 
 .main-container #loading{
@@ -45,17 +61,30 @@ table, th, td {
 }
 
 .countries th {
+    background-color: var(--color4);
+    color: var(--color1);
+    font-weight: bold;
     height: 30px;
 }
 
 .countries td {
-    padding: 10px;
+    color: var(--color4);
+    padding: 5px;
 }
 
 .send-btn {
     float: right;
-    width: 100px;
-    height: 40px;
     margin: 15px auto;
+    color: var(--color1);
+    background-color: var(--color4);
+    border: 1px solid var(--color3);
+    padding: 3px 3px;
+    cursor: pointer
 }
+
+.send-btn:hover {
+    color: var(--color2);
+    background-color: var(--color1);
+}
+
 

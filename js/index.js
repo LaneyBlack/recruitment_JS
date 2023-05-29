@@ -2,22 +2,22 @@ async function getInformation() {
     // If selects have values then
     if (document.getElementById("continent-select").value !== 'none') {
         showLoadingMsg();
-        // Get Configuration
-        const config = await fetchData("./tsconfig.json")
-            .catch(error => console.error("Fetch Config Error", error));
-
-        // Build URL
-        let queryURL = config.url;
-        queryURL += "/region/" + document.getElementById("continent-select").value
-        queryURL += "?fields="
-        for (let i = 0; i < config.tableConfig.fields.length; i++) {
-            queryURL += config.tableConfig.fields[i] + ","
-        }
-        if (config.consoleLog)
-            console.log(queryURL);
-
-        // Then try to get data using created URL
         try {
+            // Get Configuration
+            const config = await fetchData("./tsconfig.json")
+                .catch(error => console.error("Fetch Config Error", error));
+
+            // Build URL
+            let queryURL = config.url;
+            queryURL += "/region/" + document.getElementById("continent-select").value
+            queryURL += "?fields="
+            for (let i = 0; i < config.tableConfig.fields.length; i++) {
+                queryURL += config.tableConfig.fields[i] + ","
+            }
+            if (config.consoleLog)
+                console.log(queryURL);
+
+            // Then try to get data using created URL
             let data = await fetchData(queryURL);
             // let data = await fetchData(config.testfile); // local file insertion -----------------------------------
             fulfillCountryTable(data, config.tableConfig, config.consoleLog);
@@ -40,14 +40,16 @@ async function fetchData(filePath) {
 function fulfillCountryTable(data, tableConfig, consoleLog) {
     const columns = tableConfig.fields;
     let countries = [];
+    let rangeNumber = document.getElementById("number-range").value > data.length ? data.length : document.getElementById("number-range").value;
     // Get N random countries from the data
-    for (let i = 0; i < document.getElementById("number-range").value; i++) {
+    for (let i = 0; i < rangeNumber; i++) {
         let index = 0;
         do {
             index = Math.floor(Math.random() * data.length);
         } while (countries.includes(data[index]));
         countries.push(data[index]);
     }
+
     // Sort countries alphabetically by their name
     countries = countries.sort((a, b) => {
         return a.name.official.localeCompare(b.name.official);
@@ -70,21 +72,21 @@ function fulfillCountryTable(data, tableConfig, consoleLog) {
                     for (let k = 0; k < columnConfig.length; k++) {
                         created_body += countryColumn[columnConfig[k]];
                     }
-                } else if (countryColumn[0] && typeof countryColumn !== "string") { // If is a collection and not string
-                    if (typeof countryColumn[0] === "object") // If collection of objects
-                        for (let k = 0; k < countryColumn.length; k++) {
-                            created_body += countryColumn[k]["name"];
-                            if (k < countryColumn.length - 1)
-                                created_body += ", ";
-                        }
-                    else // if collection of not objects
-                        for (let k = 0; k < countryColumn.length; k++) {
-                            created_body += countryColumn[k];
-                            if (k < countryColumn.length - 1)
-                                created_body += ", ";
-                        }
-                } else
+                } else if (typeof countryColumn === "object") { // If is a collection and not string
+                    Object.keys(countryColumn).forEach(function (key) {
+                        if (typeof countryColumn[key] !== "object")
+                            created_body += countryColumn[key] + ", ";
+                        else
+                            created_body += countryColumn[key]["name"] + ", "
+                    });
+                    created_body = created_body.substring(0, created_body.length - 2);
+                    // } else if (typeof countryColumn === "object" && Object.keys(countryColumn)) {
+                    //     Object.keys(countryColumn).forEach(function (key) {
+                    //         created_body += countryColumn[key] + ", "
+                    //     });
+                } else {
                     created_body += countries[i][columns[j]];
+                }
                 created_body += "</td>";
             } else { // If NF
                 created_body += "<td>NotFound</td>";
